@@ -18,7 +18,7 @@ public class SecondTaskSet {
 //		manager.startGame();
 	}
 
-	//tato funkce ma vzdy vrátiti 7
+	//tato funkce ma vzdy vrátiti 1
 	// tato funkce jiz funguje
 	public static int one() {
 		return 1;
@@ -26,7 +26,7 @@ public class SecondTaskSet {
 
 	//tato funkce ma vzdy vrátiti 7
 	public static int seven() {
-		return 0;
+		return 7;
 	}
 // vrací true pokud vstupní číslo je větší nebo rovno 7 jinak false
 	//pro 5 vrátí false
@@ -34,17 +34,32 @@ public class SecondTaskSet {
 	//pro 4 vrátí false
 
 	public static boolean greaterOrEqualSeven(int number) {
-		return true;
+	if (number < 7) {
+            return false;
+        }
+            return true;
 	}
 
 	//vraci maximum ze dvou zadaných čísel
 	public static int max(int n1, int n2) {
-		return - 99;
+        if (n1 > n2) {
+            return n1;
 	}
-
+        if (n1 == n2) {
+            return n1 + n2;
+        }
+        return n2;
+        }
+                
 	//vraci minumum ze dvou zadaných čísel
 	public static int min(int n1, int n2) {
-		return - 99;
+	if (n1 < n2) {
+            return n1;
+        }
+        if (n1 == n2) {
+            return n1 + n2;
+        }
+            return n2;
 	}
 
 	// musí vrátiti absolutní hodontu čísla
@@ -52,14 +67,20 @@ public class SecondTaskSet {
 	//pro 77 vrátí 77
 	//pro -923 vrátí 923
 	public static int absoluteValue(int x) {
-		return 7;
+	if (x < 0) {
+            x = x*(-1);
+        }
+            return x;
 	}
 
 	//rozhdne zdali ze stran těchto délek, lze sestavit trojuhelník.
 	// pro 1 1 1 vrátí true
 	// pro 10 1 1 vrátí false
 	public static boolean triangel(int a, int b, int c) {
-		return false;
+	if ((a+b)<=c || (a+c)<=b || (b+c)<=a) {
+            return false;
+        }
+            return true;
 	}
 
 	// vrátí součet čísel od 1 do n
@@ -85,7 +106,13 @@ public class SecondTaskSet {
 	//pro 3 vrací 8
 	//pro 4 vrací 16
 	public static int NpowerOfTwo(int n) {
-		return -2;
+	int sum = 1;
+        int power = 1;
+        while (power <=n) {
+            sum = sum *2;
+            power = power +1;
+        }      
+            return sum;
 	}
 // vrátí faktoriál
 	// btw 0!=1
