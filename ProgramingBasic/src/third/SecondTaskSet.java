@@ -5,17 +5,30 @@
  */
 package third;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Vojtech Tosovsky
  */
 public class SecondTaskSet {
+    private static Object scanner;
 
 	public static void main(String[] args) {
+		Scanner inputScanner = new Scanner(System.in);
 //		playBeziLiskaKTaboru();
 //		implemenujte meotdu playKdyzJsemHusyPasala
 //		Manager manager = new Manager();
 //		manager.startGame();
+            System.out.println("Napište číslo: ");
+            int n = inputScanner.nextInt();
+            int sum = 0;
+            int counter = n;
+            while ( counter > 0 ) {
+                counter = n - 1;
+                sum = sum * n * counter;
+            }
+            System.out.println("Faktoriál Vašeho čísla je: " + sum);
 	}
 
 	//tato funkce ma vzdy vrátiti 1
@@ -106,19 +119,26 @@ public class SecondTaskSet {
 	//pro 3 vrací 8
 	//pro 4 vrací 16
 	public static int NpowerOfTwo(int n) {
-	int sum = 1;
-        int power = 1;
-        while (power <=n) {
-            sum = sum *2;
-            power = power +1;
+	int výsledek = 1;
+        int mocnina = 1;
+        while (mocnina <=n) {
+            výsledek = výsledek *2;
+            mocnina = mocnina +1;
         }      
-            return sum;
+            return výsledek;
 	}
 // vrátí faktoriál
 	// btw 0!=1
 
 	public static int factorial(int n) {
-		return 0;
+	    int sum = 0;
+            int counter = n;
+            while (counter > 1) {
+                counter = n - 1;
+                sum = n * counter ;
+                return sum; 
+            }
+            return 1;
 
 	}
 
